@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+font-family: 'Press Start 2P', cursive; 
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2em; 
+    text-align: center;
+    animation: parpadeo 2s infinite;
+    margin: 10px 0; 
+}
+
+@keyframes parpadeo {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+main {
+    width: 100%; 
+    max-width: 730px; 
+    margin: 0 auto; /* Centrar horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espacio entre los cuadros */
+}
+
+    .seccion1 {
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        border-radius: 9px;
+        text-align: center; 
+        width: 100; 
+        max-width: 12000px; 
+        margin: 0 auto; 
+        font-size: 1em;
+        flex-direction: column; 
+        display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; /* Separación entre los cuadros */
+    }
+
+
+button {
+    height: 85px; 
+    width: 85px;
+    font-size: 20px; 
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.seccion2 {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    gap: 10px; 
+    
+}
+.estadisticas {
+    border: 2px solid white;
+    width: 130px; /* Hacerlas más delgadas */
+    height: 50px; /* Ajustar altura */
+    border-radius: 8px;
+    padding: 1px;
+    display: flex;
+    align-items: center; 
+    text-align: center;
+    justify-content: center; 
+    font-size: 0.8em; /* Texto más pequeño */
+}
+
+
+#BOTON {
+    background-color: #359138; 
+    color: white; 
+    border: none;
+    justify-content: center;
+    padding: 10px 10px; /* Espaciado interno */
+    border-radius: 10px; 
+    font-size: 16px; /* Tamaño de letra */
+    font-weight: bold; 
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+#BOTON:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el mouse */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); 
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+#BOTON:active {
+    background-color: #347036; /* Color más oscuro al hacer clic */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
+    transform: scale(0.95); /* Efecto de presión */
+}
+
+img{
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 9px;
+}
+  

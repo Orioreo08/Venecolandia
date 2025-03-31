@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Snake Juego</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <audio id="gameOverSound" src="game_over.wav"></audio>
+<audio id="eatSound" src="manzana.wav"></audio> <!-- Añadir el sonido de la manzana -->
+    <div class="wrapper">
+        <div class="game-details">
+            <div class="score">Score: 0</div>
+            <div class="high-score">High Score: 30</div>
+        </div>
+        <div class="play-board"></div>
+    </div>
+
+    <div class="modal" id="gameOverModal" style="display: none;">
+        <div class="modal-content">
+            <h2>Game Over</h2>
+            <p>Tu puntuación: <span id="finalScore">0</span></p>
+            <button id="restartButton">Reiniciar Juego</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
