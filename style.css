@@ -1,0 +1,306 @@
+/* Esto es como un abrigo que le ponemos a todo en la página, para que se vea bien y ordenado. */
+* {
+    box-sizing: border-box; /* Esto ayuda a que el tamaño de las cosas sea más fácil de entender. */
+    margin: 0; /* Aquí le decimos a todo que no queremos espacios extra alrededor. */
+    padding: 0; /* Y aquí le decimos que no queremos espacios dentro de las cosas. */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Esto es como elegir la letra que queremos usar para escribir. */
+}
+
+/* Esta es la parte de la cabecera, donde ponemos el título y los botones. */
+.cabecera {
+    position: fixed; /* Esto significa que la cabecera se queda en la parte de arriba, como un amigo que siempre está ahí. */
+    top: 0; /* La ponemos en la parte de arriba. */
+    left: 0; /* Y a la izquierda. */
+    width: 100%; /* Queremos que ocupe todo el ancho de la pantalla. */
+    padding: 1.3rem 10%; /* Le damos un poco de espacio alrededor, como un abrazo. */
+    display: flex; /* Usamos flexbox para que los elementos se alineen bien. */
+    justify-content: space-between; /* Esto hace que los elementos se separen, como amigos en una fila. */
+    align-items: center; /* Los alineamos en el centro, como si estuvieran todos de pie. */
+    z-index: 100; /* Esto es como un número mágico que dice que la cabecera debe estar encima de otras cosas. */
+}
+
+/* Aquí hacemos un efecto bonito detrás de la cabecera. */
+.cabecera::before {
+    content: ''; /* Esto es como decir "aquí hay algo, pero no se ve". */
+    position: absolute; /* Lo ponemos en una posición especial. */
+    top: 0; /* Arriba. */
+    left: 0; /* A la izquierda. */
+    width: 100%; /* Ocupa todo el ancho. */
+    height: 100%; /* Y todo el alto. */
+    background: rgba(0, 0, 0, .1); /* Le damos un color negro suave, como una sombra. */
+    backdrop-filter: blur(50px); /* Hacemos que se vea borroso, como si estuviera detrás de un cristal. */
+    z-index: -1; /* Lo ponemos detrás de la cabecera. */
+}
+
+/* Aquí hacemos un efecto que se mueve cuando pasamos el ratón por encima de la cabecera. */
+.cabecera::after {
+    content: ''; /* Otra vez, algo que no se ve. */
+    position: absolute; /* Lo ponemos en una posición especial. */
+    top: 0; /* Arriba. */
+    left: -100%; /* Comienza fuera de la pantalla, a la izquierda. */
+    width: 100%; /* Ocupa todo el ancho. */
+    height: 100%; /* Y todo el alto. */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent); /* Hacemos un degradado que se ve bonito. */
+    transition: .2s; /* Esto hace que se mueva suavemente. */
+}
+
+/* Cuando pasamos el ratón por encima de la cabecera, el efecto se mueve. */
+.cabecera:hover::after {
+    left: 100%; /* Se mueve a la derecha, fuera de la pantalla. */
+}
+
+/* Aquí es donde ponemos el logo, que es como el nombre de la página. */
+.logo {
+    font-size: 2rem; /* Hacemos el texto grande. */
+    color: whitesmoke; /* Le damos un color blanco suave. */
+    text-decoration: none; /* Sin subrayado, como un dibujo limpio. */
+    font-weight: 700; /* Hacemos el texto más grueso, como un superhéroe. */
+}
+
+/* Esta es la barra de navegación, donde están los enlaces. */
+.Barra_navegacion a {
+    font-size: 1.15rem; /* Hacemos el texto un poco más pequeño que el logo. */
+    color: #fff; /* Color blanco para que se vea bien. */
+    text-decoration: none; /* Sin subrayado. */
+    font-weight: 500; /* Un poco más delgado que el logo. */
+    margin-left: 2.5rem; /* Le damos un poco de espacio a la izquierda, como si estuviera haciendo fila. */
+}
+
+/* Este es un truco para ocultar un elemento que no queremos que se vea. */
+#check {
+    display: none; /* Lo escondemos, como un secreto. */
+}
+
+/* Aquí es donde ponemos un icono, que puede ser un botón para abrir o cerrar el menú. */
+.icono {
+    position: absolute; /* Lo ponemos en una posición especial. */
+    right: 5%; /* Lo colocamos un poco a la derecha. */
+    font-size: 2.8rem; /* Hacemos el icono grande. */
+    color: #fff; /* Color blanco para que se vea bien. */
+    cursor: pointer; /* Cambiamos el cursor para que parezca un botón que se puede presionar. */
+    display: none; /* Lo escondemos al principio. */
+}
+
+/* Aquí comenzamos a hacer cambios cuando la pantalla es más pequeña, como en una tablet o un teléfono. */
+@media(max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%; /* Le damos un poco menos de espacio alrededor. */
+    }
+}
+
+/* Ahora, cuando la pantalla es aún más pequeña, hacemos más cambios. */
+@media(max-width: 768px) {
+    .icono {
+        display: inline-flex; /* Ahora lo mostramos, como si dijéramos "¡Hola, aquí estoy!". */
+    }
+
+    /* Cuando el checkbox está marcado, cambiamos el icono que se muestra. */
+    #check:checked ~ .icono #menu-icono {
+        display: none; /* Escondemos el icono de menú. */
+    }
+
+    .icono #cerrar-icono {
+        display: none; /* Escondemos el icono de cerrar. */
+    }
+
+    /* Cuando el checkbox está marcado, mostramos el icono de cerrar. */
+    #check:checked ~ .icono #cerrar-icono {
+        display: block; /* Ahora lo mostramos. */
+    }
+
+    /* Aquí es donde hacemos que la barra de navegación se vea bien en pantallas pequeñas. */
+    .Barra_navegacion {
+        position: absolute; /* La ponemos en una posición especial. */
+        top: 100%; /* Justo debajo de la cabecera. */
+        left: 0; /* A la izquierda. */
+        width: 100%; /* Ocupa todo el ancho. */
+        height: 0; /* Comienza con altura cero, como si estuviera escondida. */
+        background: rgba(0, 0, 0, .1); /* Color negro suave de fondo. */
+        backdrop-filter: blur(50px); /* Efecto borroso detrás. */
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1); /* Sombra para que se vea más bonito. */
+        overflow: hidden; /* Escondemos lo que no se ve. */
+        transition: .3s ease; /* Hacemos que se abra suavemente. */
+    }
+
+    /* Cuando el checkbox está marcado, la barra de navegación se expande. */
+    #check:checked ~ .Barra_navegacion {
+        height: 15rem; /* Ahora tiene altura, como si se estuviera estirando. */
+    }
+
+    /* Aquí hacemos que los enlaces en la barra de navegación se vean bien. */
+    .Barra_navegacion a {
+        display: block; /* Los mostramos como bloques, uno debajo del otro. */
+        font-size: 1.1rem; /* Hacemos el texto un poco más pequeño. */
+        margin: 1.5rem 0; /* Espacio arriba y abajo, como si estuvieran en fila. */
+        text-align: center; /* Los centramos, como si estuvieran en un círculo. */
+        transform: translateY(-50px); /* Los movemos un poco hacia arriba, como si estuvieran escondidos. */
+        transition: .3s ease; /* Hacemos que se muevan suavemente. */
+    }
+
+    /* Cuando el checkbox está marcado, los enlaces se mueven hacia abajo y se hacen visibles. */
+    #check:checked ~ .Barra_navegacion a {
+        transform: translateY(0); /* Los movemos a su lugar. */
+        opacity: 1; /* Los hacemos visibles. */
+        transition-delay: calc(.15s * var(--i)); /* Hacemos que aparezcan uno por uno, como si estuvieran saliendo de una caja. */
+    }
+}
+
+/* Aquí comenzamos a hablar sobre las secciones de la página */
+html {
+    scroll-behavior: smooth; /* Esto hace que cuando bajamos la página, se mueva suavemente, como si estuviera deslizándose. */
+}
+
+/* Aquí estamos diciendo cómo deben ser todas las secciones de la página */
+section {
+    width: 100%; /* Cada sección ocupa todo el ancho de la pantalla. */
+    height: 100vh; /* Cada sección ocupa toda la altura de la ventana del navegador. */
+    display: flex; /* Usamos flexbox para organizar cosas dentro de la sección. */
+    flex-direction: column; /* Queremos que los elementos dentro de la sección se coloquen uno debajo del otro. */
+    justify-content: center; /* Centramos los elementos verticalmente en la sección. */
+    align-items: center; /* Centramos los elementos horizontalmente en la sección. */
+}
+
+/* Aquí estamos hablando de las imágenes en las secciones */
+img {
+    position: relative; /* La imagen se coloca en relación a su lugar original. */
+    top: 0; /* No movemos la imagen hacia abajo. */
+    left: 0; /* No movemos la imagen hacia la derecha. */
+    width: 100%; /* La imagen ocupa todo el ancho de su contenedor. */
+    height: 100%; /* La imagen ocupa toda la altura de su contenedor. */
+    object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio sin deformarse. */
+    z-index: -1; /* Esto hace que la imagen esté detrás de otros elementos, como texto. */
+}
+
+/* Aquí comenzamos a hablar de la segunda sección */
+#seccion2 {
+    position: relative; /* Esta sección se coloca en relación a su lugar original. */
+}
+
+/* Aquí estamos hablando de cómo se ven los contenedores de puntajes */
+.container {
+    background-color: #4CAF50; /* Este es el color de fondo de los contenedores, un verde bonito. */
+    color: white; /* El texto dentro del contenedor será blanco. */
+    padding: 20px; /* Hay un espacio de 20 píxeles dentro del contenedor, alrededor del texto. */
+    border-radius: 5px; /* Las esquinas del contenedor son redondeadas, no puntiagudas. */
+    text-align: center; /* El texto dentro del contenedor se centra. */
+    position: absolute; /* Esto significa que el contenedor se puede mover a cualquier lugar en la página. */
+}
+
+/* Aquí estamos hablando del primer contenedor de mejores jugadores */
+#container1 {
+    left: 1%; /* Este contenedor se coloca un poquito a la izquierda de la pantalla. */
+    top: 50%; /* Este contenedor se coloca en el medio de la pantalla, hacia arriba y abajo. */
+    height: 80vh; /* Este contenedor ocupa el 80% de la altura de la ventana. */
+    width: 25%; /* Este contenedor ocupa el 25% del ancho de la pantalla. */
+    transform: translateY(-50%); /* Esto ayuda a centrar el contenedor verticalmente. */
+
+    /* Aquí estamos organizando el contenido dentro del contenedor */
+    display: flex; /* Usamos flexbox para organizar los elementos dentro. */
+    flex-direction: column; /* Queremos que los elementos se coloquen uno debajo del otro. */
+    align-items: center; /* Centramos los elementos horizontalmente. */
+    justify-content: flex-start; /* Los elementos comienzan desde la parte superior del contenedor. */
+    min-width: 10%; /* El contenedor no será más pequeño que el 10% del ancho. */
+    background: rgba(0, 0, 0, .1); /* Este es un color negro suave, como una sombra. */
+    backdrop-filter: blur(50px); /* Esto hace que el fondo se vea borroso detrás del contenedor. */
+}
+
+/* Aquí estamos hablando del título dentro del contenedor */
+h1 {
+    color: #fff; /* El color del texto del título es blanco. */
+    text-transform: uppercase; /* Hacemos que todas las letras sean mayúsculas. */
+    background-color: rgba(0, 0, 0, .1); /* El fondo del título es un negro suave. */
+}
+
+/* Aquí estamos hablando de la tabla dentro del contenedor */
+table {
+    color: white; /* El texto de la tabla será blanco. */
+    font-size: 20px; /* El tamaño del texto en la tabla es de 20 píxeles. */
+    table-layout: fixed; /* Esto hace que las columnas de la tabla tengan un tamaño fijo. */
+    border-collapse: collapse; /* Esto hace que las líneas de la tabla se vean juntas, sin espacios entre ellas. */
+    width: 100%; /* La tabla ocupa todo el ancho del contenedor. */
+}
+
+/* Aquí estamos hablando de las cabeceras de la tabla */
+th {
+    padding: 15px; /* Hay un espacio de 15 píxeles alrededor del texto en las cabeceras. */
+    font-weight: 700; /* Hacemos que el texto de las cabeceras sea más grueso. */
+    text-transform: uppercase; /* Hacemos que todas las letras en las cabeceras sean mayúsculas. */
+}
+
+/* Aquí estamos hablando de las celdas de la tabla */
+td {
+    padding: 15px; /* Hay un espacio de 15 píxeles alrededor del texto en las celdas. */
+    border-bottom: solid 1px rgba(0, 0, 0, .1); /* Esto agrega una línea suave en la parte inferior de cada celda. */
+}
+
+/* Aquí estamos hablando del segundo contenedor de mejores jugadores por juego */
+#container2 {
+    right: 1%; /* Este contenedor se coloca un poquito a la derecha de la pantalla. */
+    height: 80vh; /* Este contenedor ocupa el 80% de la altura de la ventana. */
+    width: 50%; /* Este contenedor ocupa el 50% del ancho de la pantalla. */
+    top: 50%; /* Este contenedor se coloca en el medio de la pantalla, hacia arriba y abajo. */
+    transform: translateY(-50%); /* Esto ayuda a centrar el contenedor verticalmente. */
+
+    display: flex; /* Usamos flexbox para organizar los elementos dentro. */
+    flex-wrap: wrap; /* Esto permite que los elementos se muevan a la siguiente línea si no hay suficiente espacio. */
+    align-items: center; /* Centramos los elementos verticalmente dentro del contenedor. */
+    justify-content: flex-start; /* Los elementos comienzan desde la parte izquierda del contenedor. */
+    min-width: 10%; /* El contenedor no será más pequeño que el 10% del ancho. */
+    background: rgba(0, 0, 0, .1); /* Este es un color negro suave, como una sombra. */
+    backdrop-filter: blur(50px); /* Esto hace que el fondo se vea borroso detrás del contenedor. */
+}
+
+/* Aquí estamos hablando de los sub-contenedores dentro del segundo contenedor */
+.sub-container {
+    height: 35vh; /* Este sub-contenedor ocupa el 35% de la altura de la ventana. */
+    width: 50%; /* Este sub-contenedor ocupa el 50% del ancho del contenedor. */
+}
+
+/* Aquí comenzamos a hablar del carrusel de juegos */
+.carrousel {
+    position: absolute; /* Esto significa que el carrusel se puede mover a cualquier lugar en la página. */
+    width: 300px; /* El carrusel tiene un ancho de 300 píxeles. */
+    height: 300px; /* El carrusel tiene una altura de 300 píxeles. */
+    transform-style: preserve-3d; /* Esto permite que los elementos dentro del carrusel se vean en 3D. */
+    animation: animate 30s linear infinite; /* Esto hace que el carrusel gire continuamente. */
+}
+
+/* Aquí estamos definiendo la animación del carrusel */
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg); /* Al principio, no hay rotación. */
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg); /* Al final, el carrusel gira completamente. */
+    }
+}
+
+/* Aquí estamos hablando de los enlaces dentro del carrusel */
+.carrousel a {
+    position: absolute; /* Cada enlace se coloca en relación a su lugar original. */
+    top: 0; /* No movemos el enlace hacia abajo. */
+    left: 0; /* No movemos el enlace hacia la derecha. */
+    width: 100%; /* Cada enlace ocupa todo el ancho del carrusel. */
+    height: 100%; /* Cada enlace ocupa toda la altura del carrusel. */
+    transform-style: preserve-3d; /* Esto permite que los elementos dentro del enlace se vean en 3D. */
+    transform: rotateY(calc(var(--i) * 90deg)) translateZ(350px); /* Esto coloca cada enlace en una posición 3D, girando en el eje Y. */
+}
+
+/* Aquí estamos hablando de las imágenes dentro de los enlaces del carrusel */
+.carrousel a img {
+    position: absolute; /* Cada imagen se coloca en relación a su lugar original. */
+    top: 0; /* No movemos la imagen hacia abajo. */
+    left: 0; /* No movemos la imagen hacia la derecha. */
+    width: 100%; /* Cada imagen ocupa todo el ancho del enlace. */
+    height: 100%; /* Cada imagen ocupa toda la altura del enlace. */
+    border-radius: 10px; /* Las esquinas de las imágenes son redondeadas, no puntiagudas. */
+    object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio sin deformarse. */
+    transition: 2s; /* Esto hace que la imagen se mueva suavemente cuando se cambia. */
+}
+
+/* Aquí estamos hablando de lo que sucede cuando pasamos el mouse sobre las imágenes del carrusel */
+.carrousel a:hover img {
+    transform: translateY(-50px) scale(1.2); /* Cuando pasamos el mouse, la imagen se mueve hacia arriba y se hace un poco más grande. */
+}
+
+

@@ -1,0 +1,241 @@
+/* Aquí estamos importando una fuente bonita llamada Montserrat desde Google */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Esto aplica a todos los elementos de la página */
+* {
+    margin: 0; /* No queremos márgenes alrededor de los elementos. */
+    padding: 0; /* No queremos espacio dentro de los elementos. */
+    box-sizing: border-box; /* Esto hace que el tamaño de los elementos incluya el padding y el borde. */
+    font-family: 'Montserrat', sans-serif; /* Usamos la fuente Montserrat para todo el texto. */
+}
+
+/* Aquí estamos hablando del fondo de la página */
+body {
+    background-image: url("Imagenes/9ae4b82935d0d426ede88bf6b433e27f.jpg"); /* Ruta a la imagen de fondo */
+    background-size: cover; /* Esto hace que la imagen cubra todo el fondo */
+    background-position: center; /* Esto centra la imagen en el fondo */
+    background-repeat: no-repeat; /* Esto evita que la imagen se repita */
+
+    display: flex; /* Usamos flexbox para organizar el contenido. */
+    align-items: center; /* Centramos los elementos verticalmente. */
+    justify-content: center; /* Centramos los elementos horizontalmente. */
+    flex-direction: column; /* Queremos que los elementos se coloquen uno debajo del otro. */
+    height: 100vh; /* La altura de la página es igual a la altura de la ventana del navegador. */
+}
+
+/* Aquí estamos hablando del contenedor principal */
+.container {
+    background-color: #fff; /* El fondo del contenedor es blanco. */
+    border-radius: 30px; /* Las esquinas del contenedor son redondeadas. */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35); /* Esto agrega una sombra suave alrededor del contenedor. */
+    position: relative; /* Esto permite que los elementos dentro se posicionen en relación a este contenedor. */
+    overflow: hidden; /* Esto oculta cualquier cosa que se salga del contenedor. */
+    width: 768px; /* El contenedor tiene un ancho de 768 píxeles. */
+    max-width: 100%; /* El contenedor no será más ancho que la pantalla. */
+    min-height: 480px; /* El contenedor tendrá al menos 480 píxeles de altura. */
+}
+
+/* Aquí estamos hablando de los párrafos dentro del contenedor */
+.container p {
+    font-size: 14px; /* El tamaño del texto en los párrafos es de 14 píxeles. */
+    line-height: 20px; /* La altura de cada línea de texto es de 20 píxeles. */
+    letter-spacing: 0.3px; /* Hay un pequeño espacio entre las letras. */
+    margin: 20px 0; /* Hay un espacio de 20 píxeles arriba y abajo del párrafo. */
+}
+
+/* Aquí estamos hablando de los elementos <span> dentro del contenedor */
+.container span {
+    font-size: 12px; /* El tamaño del texto en los <span> es de 12 píxeles. */
+}
+
+/* Aquí estamos hablando de los enlaces dentro del contenedor */
+.container a {
+    color: #333; /* El color del texto de los enlaces es un gris oscuro. */
+    font-size: 13px; /* El tamaño del texto en los enlaces es de 13 píxeles. */
+    text-decoration: none; /* No queremos subrayar los enlaces. */
+    margin: 15px 0 10px; /* Hay un espacio de 15 píxeles arriba y 10 píxeles abajo del enlace. */
+}
+
+/* Aquí estamos hablando de los botones dentro del contenedor */
+.container button {
+    background-color: blue; /* El fondo del botón es azul. */
+    color: #fff; /* El texto del botón es blanco. */
+    font-size: 12px; /* El tamaño del texto en el botón es de 12 píxeles. */
+    padding: 10px 45px; /* Hay un espacio de 10 píxeles arriba y abajo, y 45 píxeles a los lados del botón. */
+    border: 1px solid transparent; /* El borde del botón es transparente. */
+    border-radius: 8px; /* Las esquinas del botón son redondeadas. */
+    font-weight: 600; /* El texto del botón es un poco más grueso. */
+    letter-spacing: 0.5px; /* Hay un pequeño espacio entre las letras del botón. */
+    text-transform: uppercase; /* Hacemos que todas las letras del botón sean mayúsculas. */
+    margin-top: 10px; /* Hay un espacio de 10 píxeles arriba del botón. */
+    cursor: pointer; /* Cambiamos el cursor a una mano cuando pasamos el mouse sobre el botón. */
+}
+
+/* Aquí estamos hablando de los botones que tienen la clase "hidden" */
+.container button.hidden {
+    background-color: transparent; /* El fondo del botón es transparente. */
+    border-color: #fff; /* El borde del botón es blanco. */
+}
+
+/* Aquí estamos hablando del formulario dentro del contenedor */
+.container form {
+    background-color: #fff; /* El fondo del formulario es blanco. */
+    display: flex; /* Usamos flexbox para organizar los elementos dentro del formulario. */
+    align-items: center; /* Centramos los elementos verticalmente. */
+    justify-content: center; /* Centramos los elementos horizontalmente. */
+    flex-direction: column; /* Queremos que los elementos se coloquen uno debajo del otro. */
+    padding: 0 40px; /* Hay un espacio de 40 píxeles a los lados del formulario. */
+    height: 100%; /* El formulario ocupa toda la altura del contenedor. */
+}
+
+/* Aquí estamos hablando de los campos de entrada dentro del formulario */
+.container input {
+    background-color: #eee; /* El fondo de los campos de entrada es gris claro. */
+    border: none; /* No queremos borde alrededor de los campos de entrada. */
+    margin: 8px 0; /* Hay un espacio de 8 píxeles arriba y abajo de cada campo de entrada. */
+    padding: 10px 15px; /* Hay un espacio de 10 píxeles arriba y abajo, y 15 píxeles a los lados. */
+    font-size: 13px; /* El tamaño del texto en los campos de entrada es de 13 píxeles. */
+    border-radius: 8px; /* Las esquinas de los campos de entrada son redondeadas. */
+    width: 100%; /* Los campos de entrada ocupan todo el ancho del formulario. */
+    outline: none; /* No queremos que aparezca un borde cuando el campo está seleccionado. */
+}
+
+/* Aquí estamos hablando de la parte del formulario que se mueve */
+.form-container {
+    position: absolute; /* Esto permite que la parte del formulario se mueva libremente. */
+    top: 0; /* Se coloca en la parte superior del contenedor. */
+    height: 100%; /* Ocupa toda la altura del contenedor. */
+    transition: all 0.6s ease-in-out; /* Esto hace que el movimiento sea suave. */
+}
+
+/* Aquí estamos hablando de la sección de inicio de sesión */
+.sign-in {
+    left: 0; /* Se coloca a la izquierda. */
+    width: 50%; /* Ocupa la mitad del contenedor. */
+    z-index: 2; /* Esto asegura que esté por encima de otros elementos. */
+}
+
+/* Cuando el contenedor tiene la clase "active", movemos la sección de inicio de sesión */
+.container.active .sign-in {
+    transform: translateX(100%); /* Mueve la sección de inicio de sesión hacia la derecha. */
+}
+
+/* Aquí estamos hablando de la sección de registro */
+.sign-up {
+    left: 0; /* Se coloca a la izquierda. */
+    width: 50%; /* Ocupa la mitad del contenedor. */
+    opacity: 0; /* Comienza invisible. */
+    z-index: 1; /* Está detrás de la sección de inicio de sesión. */
+}
+
+/* Cuando el contenedor tiene la clase "active", movemos la sección de registro */
+.container.active .sign-up {
+    transform: translateX(100%); /* Mueve la sección de registro hacia la derecha. */
+    opacity: 1; /* Ahora se vuelve visible. */
+    z-index: 5; /* Está por encima de la sección de inicio de sesión. */
+    animation: move 0.6s; /* Agrega una animación al movimiento. */
+}
+
+/* Aquí estamos definiendo la animación llamada "move" */
+@keyframes move {
+    0%, 49.99% {
+        opacity: 0; /* Al principio, la sección es invisible. */
+        z-index: 1; /* Está detrás de otros elementos. */
+    }
+    50%, 100% {
+        opacity: 1; /* Al final, la sección se vuelve visible. */
+        z-index: 5; /* Está por encima de otros elementos. */
+    }
+}
+
+/* Aquí estamos hablando de los íconos de redes sociales */
+.social-icons {
+    margin: 20px 0; /* Hay un espacio de 20 píxeles arriba y abajo de los íconos. */
+}
+
+/* Aquí estamos hablando de los enlaces de redes sociales */
+.social-icons a {
+    border: 1px solid #ccc; /* Hay un borde gris claro alrededor de los íconos. */
+    border-radius: 20%; /* Las esquinas de los íconos son redondeadas. */
+    display: inline-flex; /* Usamos flexbox para alinear los íconos. */
+    justify-content: center; /* Centramos el contenido dentro de los íconos. */
+    align-items: center; /* Centramos verticalmente los íconos. */
+    margin: 0 3px; /* Hay un pequeño espacio de 3 píxeles a los lados de cada ícono. */
+    width: 40px; /* Cada ícono tiene un ancho de 40 píxeles. */
+    height: 40px; /* Cada ícono tiene una altura de 40 píxeles. */
+}
+
+/* Aquí estamos hablando del contenedor que permite cambiar entre inicio de sesión y registro */
+.toggle-container {
+    position: absolute; /* Esto permite que el contenedor se mueva libremente. */
+    top: 0; /* Se coloca en la parte superior del contenedor. */
+    left: 50%; /* Se coloca en el medio del contenedor. */
+    width: 50%; /* Ocupa la mitad del contenedor. */
+    height: 100%; /* Ocupa toda la altura del contenedor. */
+    overflow: hidden; /* Oculta cualquier cosa que se salga del contenedor. */
+    transition: all 0.6s ease-in-out; /* Esto hace que el movimiento sea suave. */
+    border-radius: 150px 0 0 100px; /* Las esquinas son redondeadas de manera especial. */
+    z-index: 1000; /* Está por encima de otros elementos. */
+}
+
+/* Cuando el contenedor tiene la clase "active", movemos el contenedor de cambio */
+.container.active .toggle-container {
+    transform: translateX(-100%); /* Mueve el contenedor de cambio hacia la izquierda. */
+    border-radius: 0 150px 100px 0; /* Cambia la forma de las esquinas. */
+}
+
+/* Aquí estamos hablando del área que cambia de color */
+.toggle {
+    background-color:blu; /* El fondo del área de cambio es un color púrpura. */
+    height: 100%; /* Ocupa toda la altura del contenedor. */
+    background: linear-gradient(to left,rgb(110, 110, 252), blue); /* Hacemos un fondo que se mezcla de azul a púrpura. */
+    color: #fff; /* El texto en el área de cambio es blanco. */
+    position: relative; /* Esto permite que se posicione en relación a su lugar original. */
+    left: -100%; /* Comienza fuera de la vista a la izquierda. */
+    height: 100%; /* Ocupa toda la altura del contenedor. */
+    width: 200%; /* Ocupa el doble del ancho del contenedor. */
+    transform: translateX(0); /* Comienza en su lugar original. */
+    transition: all 0.6s ease-in-out; /* Esto hace que el movimiento sea suave. */
+}
+
+/* Cuando el contenedor tiene la clase "active", movemos el área de cambio */
+.container.active .toggle {
+    transform: translateX(50%); /* Mueve el área de cambio hacia la derecha. */
+}
+
+/* Aquí estamos hablando de los paneles que se muestran al cambiar entre inicio de sesión y registro */
+.toggle-panel {
+    position: absolute; /* Esto permite que el panel se mueva libremente. */
+    width: 50%; /* Ocupa la mitad del contenedor. */
+    height: 100%; /* Ocupa toda la altura del contenedor. */
+    display: flex; /* Usamos flexbox para organizar el contenido dentro del panel. */
+    align-items: center; /* Centramos los elementos verticalmente. */
+    justify-content: center; /* Centramos los elementos horizontalmente. */
+    flex-direction: column; /* Queremos que los elementos se coloquen uno debajo del otro. */
+    padding: 0 30px; /* Hay un espacio de 30 píxeles a los lados del panel. */
+    text-align: center; /* Centramos el texto dentro del panel. */
+    top: 0; /* Se coloca en la parte superior del contenedor. */
+    transform: translateX(0); /* Comienza en su lugar original. */
+    transition: all 0.6s ease-in-out; /* Esto hace que el movimiento sea suave. */
+}
+
+/* Aquí estamos hablando del panel de la izquierda */
+.toggle-left {
+    transform: translateX(-200%); /* Mueve el panel de la izquierda fuera de la vista a la izquierda. */
+}
+
+/* Cuando el contenedor tiene la clase "active", movemos el panel de la izquierda */
+.container.active .toggle-left {
+    transform: translateX(0); /* Mueve el panel de la izquierda a su lugar original. */
+}
+
+/* Aquí estamos hablando del panel de la derecha */
+.toggle-right {
+    right: 0; /* Se coloca a la derecha. */
+    transform: translateX(0); /* Comienza en su lugar original. */
+}
+
+/* Cuando el contenedor tiene la clase "active", movemos el panel de la derecha */
+.container.active .toggle-right {
+    transform: translateX(200%); /* Mueve el panel de la derecha fuera de la vista a la derecha. */
+}
