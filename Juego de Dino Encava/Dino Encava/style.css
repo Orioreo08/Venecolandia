@@ -1,0 +1,211 @@
+p{
+    font-family:  'Times New Roman', sans-serif;
+    font-size: 3rem;
+      color: black;
+
+   }
+body {
+    overflow: hidden; /* Evita que la pantalla se deslice */
+    
+  }
+  body {
+    background-image: url('img/fondo2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h2 {
+font-family: 'Times New Roman', sans-serif;
+font-size: 5rem;
+text-transform: uppercase;
+color: #333;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+text-align: center;
+  
+    font-size: 70px; /* Ajusta el tamaño de la fuente a 70px o según sea necesario */
+    text-align: center; /* Centra horizontalmente */
+    margin-top: 0%; /* Reduce la distancia con el contenido superior */
+    margin-bottom: 0px; /* Reduce la distancia con el contenido siguiente */
+}
+
+.boton {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 80px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s ease all;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    color: black; /* Establece el color del texto por defecto */
+  }
+  
+  .boton.cuatro {
+    margin-bottom: 10px; /* Agrega espacio entre los botones */
+  }
+  
+  .boton.cuatro::after {
+    content: "";
+    width: 1px;
+    height: 1px;
+    background: none;
+    position: absolute;
+    z-index: -1; /* Cambia el z-index para que esté detrás del botón */
+    
+    left: 50%;
+    transition: .3s ease-in-out all;
+    border-radius: 100px;
+    transform-origin: center;
+    transform: scale(0); /* Añade escala inicial para que esté oculto por defecto */
+  }
+  
+  .boton.cuatro:hover::after {
+    transform: scale(40);
+    background: #cc1010;
+  }
+  
+  .boton.cuatro:hover {
+    background: #960909;
+    color: white; /* Cambia el color del texto al hacer hover */
+  }
+  
+/* Estilos para los fantasmas */
+
+/* Estilos para el primer fantasma */
+.fantasma {
+    border-radius: 10%;
+    background: url('imagenes/fantasma.gif');
+    background-size: cover;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 0%;
+    left: 10%; /* Ajusta la posición a la derecha */
+    width: 80px;
+    height: 80px;
+    animation: fantasmas 7s linear infinite;
+}
+
+/* Estilos para el segundo fantasma */
+.fantasmas {
+    border-radius: 10%;
+    background: url('img/cactus.gif');
+    background-size: cover;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 0%;
+    left: 65%; /* Ajusta la posición a la izquierda */
+    width: 80px;
+    height: 80px;
+    animation: fantasmas 7s linear infinite;
+}
+
+
+/* Estilos para el primer fantasma */
+.fantasma:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 70%;
+    animation-duration: 7s;
+    animation-delay: 3s;
+}
+
+/* Estilos para el segundo fantasma */
+.fantasma:nth-child(2){
+    width: 80px;
+    height: 80px;
+    left: 80%;
+    
+    animation-duration: 7s;
+    animation-delay: 3s;
+}
+/* Estilos para la clase fantasmas */
+
+/* Estilos para el primer elemento con la clase fantasmas */
+.fantasmas:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 80%; /* Alinea a la derecha */
+    animation-duration: 7s;
+    animation-delay: 3s;
+}
+
+/* Estilos para el segundo elemento con la clase fantasmas */
+.fantasmas:nth-child(2){
+    width: 80px;
+    height: 80px;
+    left: 90%; /* Alinea a la derecha */
+    animation-duration: 7s;
+    animation-delay: 3s;
+}
+
+
+
+@keyframes fantasmas{
+    0%{
+        bottom: 15%;
+        opacity: 50;
+    }
+    30%{
+        transform: translateX(30px);
+    }
+    50%{
+        opacity: 54;
+    }
+    100%{
+        bottom: 95%;
+        opacity: 90;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 350px; /* Ajusta la altura según sea necesario */
+    justify-content: center; /* Centra verticalmente */
+}
+
+li {
+    text-align: center;
+}
+
+li a {
+    display: block;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px; /* Cambia el tamaño de la fuente a 20px */
+    line-height: 40px; /* Aumenta el espacio entre líneas a 30px */
+}
+
+  .eat-overlay {
+    position: fixed;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/dinojump.gif') center center no-repeat;
+    z-index: 9999; /* Asegúrate de que la capa esté por encima de todo */
+    /* Agrega estilos de transición para una animación suave */
+    background-size: 500px; /* Ajusta el tamaño de la imagen para que se ajuste al contenedor */
+    transition: opacity 0.5s ease;
+  }
+  
+  .fade-out {
+    opacity: 100; /* Oculta el contenido mientras se muestra la imagen de "comer" */
+  }
+ 
+   /*Estilos del tablero *//*Estilos del tablero *//*Estilos del tablero *//*Estilos del tablero *//*Estilos del tablero *//*Estilos del tablero */
+
+   
