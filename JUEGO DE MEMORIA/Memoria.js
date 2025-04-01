@@ -121,7 +121,7 @@ function destapar(id) {
            mostrar_tiempo.innerHTML= `Demoraste ${tiempo_inicial-tiempo} segundos`
            mostrar_movimientos.innerHTML= `Movimientos: ${movimientos} ✨`
                // Mostrar mensaje de victoria
-            mensajeTexto.innerHTML = "¡Felicidades! 🎉 Ganaste el juego.";
+            mensajeTexto.innerHTML = "¡Felicidades! 🎉 Ganaste el juego."
             mensajeFinal.style.display = "block";
             }
 

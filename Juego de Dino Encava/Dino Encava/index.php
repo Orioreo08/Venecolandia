@@ -43,8 +43,7 @@
             <option value="circulo">Círculo</option>
           
         </select>
-</div>
-    
+</div>   
 
 <script>
 
@@ -153,6 +152,8 @@ const gameoveraudio = new Audio("audio/trambolico.mp3");
 const jumpaudio = new Audio("audio/salto.mp3");
 const chamita = new Audio("audio/chamita.wav");
 const temblando = new Audio("audio/tatemblandorosi.wav");
+const salsita1 = new Audio("audio/salsita1.mp3");
+const malandro = new Audio("audio/malandro.mp3");
 
 function Start() {
     gameOver = document.querySelector(".game-over");
@@ -326,18 +327,24 @@ function MoverNubes() {
 function GanarPuntos() {
     score++;
     textoScore.innerText = score;
-    if(score == 10){
+    if(score == 5){
         gameVel = 1.25;
         contenedor.classList.add("mediodia");
         chamita.play();
-    }else if(score == 20) {
+    }else if(score == 10) {
         gameVel = 1.5;
         contenedor.classList.add("tarde");
         temblando.play();
-    } else if(score == 50) {
+    } else if(score == 15) {
         gameVel = 2;
         contenedor.classList.add("noche");
+        salsita1.play();
         
+    } else if(score == 25){
+        gameVel = 2.2;
+        contenedor.classList.add("diabolico");
+        malandro.play();
+
     }
     suelo.style.animationDuration = (3/gameVel)+"s";
 }

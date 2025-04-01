@@ -8,7 +8,7 @@
 
 <style>
         body {
-                background-image: url('img/fondo2.png');
+                background-image: url('img/Dinoencava.png');
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
@@ -19,7 +19,7 @@
               font-size: 5rem;
               text-transform: uppercase;
               color: #333;
-              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+              text-shadow: 1px 1px 2px rgb(236, 233, 233);
               text-align: center;
             }
 
